@@ -5,6 +5,7 @@
   "mixins": [
     "ActiveTargetGoalMixin",
     "AnvilScreenHandlerMixin",
+    "BedBlockMixin",
     "BlockEntityTypeMixin",
     "BlockMixin",
     "ChorusFlowerBlockMixin",

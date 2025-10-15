@@ -48,6 +48,9 @@ public class ConfigEntries {
 
         shatteredPendantDurability = new ConfigEntry<>("equipment.shattered_pendant_durability", 4).get();
         subwooferRange = new ConfigEntry<>("equipment.subwoofer_range", 6).get();
+
+        bedsWorkInEnd = new ConfigEntry<>("gameplay.beds_work_in_end", true).get();
+
     }
 
     public static String dataCompatMode = "";
@@ -91,4 +94,6 @@ public class ConfigEntries {
     public static int subwooferRange;
 
     public static int shatteredPendantDurability;
+
+    public static boolean bedsWorkInEnd;
 }
