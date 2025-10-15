@@ -167,7 +167,9 @@ public class ModConfig {
     "cutscene": true,
     // Should the End be rendered dark (like if it were actually night)
     "dark_end": false,
-    
+    // Should beds work in the End dimension instead of exploding
+    "beds_work_in_end": true,
+
     "dragon": {
       // Should the Dragon's Fireballs create a firey explosion on impact
       "explosive_fireballs": true,
