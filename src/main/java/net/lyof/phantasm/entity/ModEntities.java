@@ -6,6 +6,7 @@ import net.lyof.phantasm.Phantasm;
 import net.lyof.phantasm.entity.custom.BehemothEntity;
 import net.lyof.phantasm.entity.custom.ChoralArrowEntity;
 import net.lyof.phantasm.entity.custom.CrystieEntity;
+import net.lyof.phantasm.entity.custom.EndPhantomEntity;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
@@ -16,6 +17,7 @@ public class ModEntities {
     public static void register() {
         FabricDefaultAttributeRegistry.register(CRYSTIE, CrystieEntity.createAttributes());
         FabricDefaultAttributeRegistry.register(BEHEMOTH, BehemothEntity.createAttributes());
+        FabricDefaultAttributeRegistry.register(END_PHANTOM, EndPhantomEntity.createEndPhantomAttributes());
     }
 
     public static final EntityType<CrystieEntity> CRYSTIE = Registry.register(Registries.ENTITY_TYPE,
@@ -29,4 +31,9 @@ public class ModEntities {
     public static final EntityType<ChoralArrowEntity> CHORAL_ARROW = Registry.register(Registries.ENTITY_TYPE,
             Phantasm.makeID("choral_arrow"), FabricEntityTypeBuilder.create(SpawnGroup.MISC, ChoralArrowEntity::new)
                     .dimensions(EntityDimensions.fixed(0.5F, 0.5F)).trackRangeChunks(4).trackedUpdateRate(20).build());
-}
+
+    public static final EntityType<EndPhantomEntity> END_PHANTOM = Registry.register(Registries.ENTITY_TYPE,
+            Phantasm.makeID("end_phantom"), FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, EndPhantomEntity::new)
+                    .dimensions(EntityDimensions.changing(1.8f, 1f)).trackRangeBlocks(80).build()
+    );
+                }
