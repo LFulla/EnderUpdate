@@ -307,6 +307,8 @@ public class ModItemGroups {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(entries -> {
             entries.add(ModItems.CRYSTIE_SPAWN_EGG);
             entries.add(ModItems.BEHEMOTH_SPAWN_EGG);
+            entries.add(ModItems.END_PHANTOM_SPAWN_EGG);
+            entries.add(ModItems.END_PHANTOM_SPAWN_EGG);
         });
     }
 }

@@ -114,4 +114,7 @@ public class ModItems {
     public static final Item BEHEMOTH_SPAWN_EGG = ModRegistry.ofItem("behemoth_spawn_egg",
             new SpawnEggItem(ModEntities.BEHEMOTH, 0xafa0ff, 0x0f000f, new FabricItemSettings()))
             .build();
+    public static final Item END_PHANTOM_SPAWN_EGG = ModRegistry.ofItem("end_phantom_spawn_egg",
+            new SpawnEggItem(ModEntities.END_PHANTOM, 0x2D1B69, 0x7B68EE, new FabricItemSettings()))
+            .build();
 }
