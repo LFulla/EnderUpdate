@@ -154,7 +154,7 @@ public class ModConfig {
       "no_crystal_cages": false,
       // Height to be added to the spires, mostly useful in case of datapacks raising the main island level
         // Set to 0 to have them be the same height as they are in vanilla
-      "extra_height": 0
+      "extra_height": 20
     }
   },
   
@@ -197,7 +197,7 @@ public class ModConfig {
   "equipment": {
     "elytra": {
       // Advancement needed to enable elytra boosting. Leave blank "" to disable the need for one
-      "boost_advancement": "minecraft:end/kill_dragon",
+      "boost_advancement": "",
       // Should the item frame in End City Ships be replaced by a Challenge Rune
       "has_challenge": true,
       // Offset to place the Challenge Rune in End City Ships. Doeesn't need to be modified unless you're using
