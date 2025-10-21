@@ -22,6 +22,6 @@ public abstract class DragonFireballEntityMixin extends ExplosiveProjectileEntit
     public void explode(HitResult hitResult, CallbackInfo ci) {
         if (!(hitResult instanceof EntityHitResult entityHitResult) || !this.isOwner(entityHitResult.getEntity()) && ConfigEntries.explosiveDragonFireballs)
             this.getWorld().createExplosion((DragonFireballEntity) (Object) this, this.getX(), this.getY() + 0.5, this.getZ(),
-                    3, true, World.ExplosionSourceType.MOB);
+                    5, true, World.ExplosionSourceType.MOB);
     }
 }
