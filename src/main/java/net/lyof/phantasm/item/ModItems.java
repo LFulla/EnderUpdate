@@ -107,6 +107,13 @@ public class ModItems {
             new ChoralArrowItem(new FabricItemSettings()))
             .model().tag(ItemTags.ARROWS).build();
 
+    public static final Item ELYTRA_CORE = ModRegistry.ofItem("elytra_core",
+            new ElytraCoreItem(new FabricItemSettings().rarity(Rarity.RARE)))
+            .model().build();
+    
+    public static final Item ENDER_HEART = ModRegistry.ofItem("ender_heart",
+            new EnderHeartItem(new FabricItemSettings().rarity(Rarity.RARE)))
+            .model().build();
 
     public static final Item CRYSTIE_SPAWN_EGG = ModRegistry.ofItem("crystie_spawn_egg",
             new SpawnEggItem(ModEntities.CRYSTIE, 0xfaf0ff, 0xa0a0ff, new FabricItemSettings()))
