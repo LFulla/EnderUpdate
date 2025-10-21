@@ -21,7 +21,6 @@
     "EndSpikeFeatureMixin",
     "EndSpikeFeatureSpikeMixin",
     "EntityMixin",
-    "FireworkRocketItemMixin",
     "LifecycledResourceManagerImplMixin",
     "LivingEntityMixin",
     "MinecraftServerMixin",
