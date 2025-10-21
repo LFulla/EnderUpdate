@@ -18,6 +18,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.boss.BossBar;
 import net.minecraft.entity.boss.ServerBossBar;
 import net.minecraft.entity.decoration.EndCrystalEntity;
+import net.minecraft.entity.FallingBlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
@@ -122,6 +123,11 @@ public class ChallengeRuneBlockEntity extends BlockEntity {
 
         if (player instanceof ServerPlayerEntity serverPlayer)
             Criteria.PLAYER_GENERATES_CONTAINER_LOOT.trigger(serverPlayer, this.challenge.lootTable);
+        
+        // Trigger End ship collapse if this is the elytra challenge
+        if (this.challenge.id.toString().contains("elytra") && !this.getWorld().isClient) {
+            net.lyof.phantasm.util.EndShipCollapseUtil.triggerCollapse(this.getWorld(), this.getPos());
+        }
     }
 
     public boolean hasCompleted(PlayerEntity player) {

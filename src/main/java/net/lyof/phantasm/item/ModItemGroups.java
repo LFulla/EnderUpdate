@@ -150,6 +150,8 @@ public class ModItemGroups {
                         entries.add(ModBlocks.CHALLENGE_RUNE);
                         entries.add(ModItems.SHATTERED_PENDANT);
 
+                        entries.add(ModItems.ELYTRA_CORE);
+
                         //entries.add(ModItems.REALITY_BREAKER);
 
                         //for (Item item : ModRegistry.ITEMS)
@@ -273,6 +275,7 @@ public class ModItemGroups {
             entries.addAfter(Items.JUKEBOX, ModBlocks.SUBWOOFER_BLOCK);
 
             entries.addAfter(Items.ENDER_EYE, ModBlocks.CHALLENGE_RUNE);
+
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.REDSTONE).register(entries -> {
             entries.addAfter(Items.NOTE_BLOCK, ModBlocks.SUBWOOFER_BLOCK);
@@ -309,6 +312,10 @@ public class ModItemGroups {
             entries.add(ModItems.BEHEMOTH_SPAWN_EGG);
             entries.add(ModItems.END_PHANTOM_SPAWN_EGG);
             entries.add(ModItems.END_PHANTOM_SPAWN_EGG);
+        });
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
+            entries.addAfter(Items.ENDER_EYE, ModItems.ELYTRA_CORE);
+            entries.addAfter(ModItems.ELYTRA_CORE, ModItems.ENDER_HEART);
         });
     }
 }

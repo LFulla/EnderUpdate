@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "elytra",
+  "key": {
+    "C": {
+      "item": "phantasm:elytra_core"
+    },
+    "P": {
+      "item": "minecraft:phantom_membrane"
+    },
+    "H": {
+      "item": "phantasm:ender_heart"
+    }
+  },
+  "pattern": [
+    "PHP",
+    "PCP",
+    "P P"
+  ],
+  "result": {
+    "item": "minecraft:elytra"
+  },
+  "show_notification": true
+}
