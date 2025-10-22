@@ -21,7 +21,7 @@ public class EndPhantomEntity extends PhantomEntity {
         return HostileEntity.createHostileAttributes()
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 15.0) 
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 4.0) 
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.4) // Flying speed
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 1.2) // Flying speed
                 .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 64.0); // Large follow range like phantoms
     }
     
