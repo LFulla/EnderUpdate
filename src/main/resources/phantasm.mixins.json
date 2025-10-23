@@ -15,6 +15,7 @@
     "EndCityGeneratorPieceMixin",
     "EndCrystalEntityMixin",
     "EndCrystalItemMixin",
+    "EnderDragonEntityMixin",
     "EndermanEntityMixin",
     "EnderPearlItemMixin",
     "EndGatewayBlockEntityMixin",
