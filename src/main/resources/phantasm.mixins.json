@@ -33,6 +33,7 @@
     "PlayerEntityMixin",
     "PlayerGeneratesContainerLootCriterionConditionsMixin",
     "RegistryLoaderMixin",
+    "RespawnAnchorBlockMixin",
     "ServerPlayerEntityMixin",
     "TheEndBiomesMixin",
     "access.ChunkGeneratorSettingsAccessor",
