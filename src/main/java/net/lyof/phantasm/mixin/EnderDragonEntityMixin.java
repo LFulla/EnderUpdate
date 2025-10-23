@@ -109,17 +109,22 @@ public class EnderDragonEntityMixin {
             // Check if this fireball was shot by this dragon
             if (fireball.getOwner() == dragon) {
                 cir.setReturnValue(false); // Return false to indicate no damage was taken
+                return;
             }
         }
         
-        // Cancel damage if it's from explosion caused by dragon's own fireball
-        if (source.getSource() instanceof DragonFireballEntity && source.getName().equals("explosion")) {
-            DragonFireballEntity fireball = (DragonFireballEntity) source.getSource();
-            
-            // Check if this explosion was caused by this dragon's fireball
-            if (fireball.getOwner() == dragon) {
-                cir.setReturnValue(false); // Return false to indicate no damage was taken
-            }
+        // Cancel damage if it's any explosion damage (dragons should be immune to explosions)
+        // This catches explosion damage that might not preserve the fireball source properly
+        if (source.getName().equals("explosion.player") || 
+            source.getName().equals("explosion") || 
+            source.getName().contains("explosion")) {
+            cir.setReturnValue(false); // Dragons are immune to all explosion damage
+            return;
+        }
+        
+        // Also check for fireball-related damage types
+        if (source.getName().contains("fireball") || source.getName().contains("dragon")) {
+            cir.setReturnValue(false); // Dragons immune to fireball/dragon damage
         }
     }
 }
