@@ -18,6 +18,14 @@ public abstract class DragonFireballEntityMixin extends ExplosiveProjectileEntit
         super(entityType, world);
     }
 
+    @Inject(method = "<init>*", at = @At("TAIL"))
+    public void boostSpeed(CallbackInfo ci) {
+        if (ConfigEntries.explosiveDragonFireballs) {
+            // Double the fireball's initial velocity for much faster projectiles
+            this.setVelocity(this.getVelocity().multiply(4.0));
+        }
+    }
+
     @Inject(method = "onCollision", at = @At("TAIL"))
     public void explode(HitResult hitResult, CallbackInfo ci) {
         if (!(hitResult instanceof EntityHitResult entityHitResult) || !this.isOwner(entityHitResult.getEntity()) && ConfigEntries.explosiveDragonFireballs)

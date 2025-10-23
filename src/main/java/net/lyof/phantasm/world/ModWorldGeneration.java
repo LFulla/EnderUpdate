@@ -60,7 +60,7 @@ public class ModWorldGeneration {
         BiomeModifications.addSpawn(BiomeSelectors.includeByKey(BiomeKeys.THE_END),
                 SpawnGroup.MONSTER,
                 ModEntities.END_PHANTOM,
-                7, 2, 4);
+                3, 1, 3);
     }
 
     private static void generateSpawnRestrictions() {
