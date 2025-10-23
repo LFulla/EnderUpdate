@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "SSS",
+    "FFF",
+    "SSS"
+  ],
+  "key": {
+    "F": {
+      "item": "phantasm:fallen_star"
+    },
+    "S": {
+      "item": "minecraft:crying_obsidian"
+    }
+  },
+  "result": {
+    "item": "minecraft:respawn_anchor"
+  }
+}
