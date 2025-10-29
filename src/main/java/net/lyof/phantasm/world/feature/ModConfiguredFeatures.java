@@ -65,7 +65,7 @@ public class ModConfiguredFeatures {
                 new CrystalSpikeFeatureConfig(UniformIntProvider.create(3, 5), 0.3f));
 
         register(context, FALLEN_STAR, SingleBlockFeature.INSTANCE,
-                new SingleBlockFeatureConfig(UniformIntProvider.create(110, 180), BlockStateProvider.of(ModBlocks.FALLEN_STAR)));
+                new SingleBlockFeatureConfig(UniformIntProvider.create(320, 384), BlockStateProvider.of(ModBlocks.FALLEN_STAR)));
 
         register(context, VIVID_NIHILIS, Feature.FLOWER, new RandomPatchFeatureConfig(
                 48, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,

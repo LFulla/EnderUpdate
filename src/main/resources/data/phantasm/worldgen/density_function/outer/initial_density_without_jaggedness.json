@@ -1,46 +1,133 @@
 {
   "type": "minecraft:add",
-  "argument1": -0.234375,
-  "argument2": {
-    "type": "minecraft:mul",
+  "argument1": {
+    "type": "minecraft:add",
     "argument1": {
-      "type": "minecraft:y_clamped_gradient",
-      "from_y": 4,
-      "to_y": 32,
-      "from_value": 0,
-      "to_value": 1
-    },
-    "argument2": {
       "type": "minecraft:add",
-      "argument1": 0.234375,
-      "argument2": {
+      "argument1": {
         "type": "minecraft:add",
-        "argument1": -23.4375,
+        "argument1": {
+          "type": "minecraft:mul",
+          "argument1": {
+            "type": "minecraft:y_clamped_gradient",
+            "from_y": 4,
+            "to_y": 24,
+            "from_value": 0,
+            "to_value": 1
+          },
+          "argument2": {
+            "type": "minecraft:mul",
+            "argument1": {
+              "type": "minecraft:y_clamped_gradient",
+              "from_y": 28,
+              "to_y": 48,
+              "from_value": 1,
+              "to_value": 0
+            },
+            "argument2": {
+              "type": "minecraft:cache_2d",
+              "argument": {
+                "type": "minecraft:end_islands"
+              }
+            }
+          }
+        },
         "argument2": {
           "type": "minecraft:mul",
           "argument1": {
             "type": "minecraft:y_clamped_gradient",
-            "from_y": 8,
+            "from_y": 44,
             "to_y": 64,
-            "from_value": 1,
-            "to_value": 0
+            "from_value": 0,
+            "to_value": 1
           },
           "argument2": {
             "type": "minecraft:add",
-            "argument1": 23.4375,
+            "argument1": 0.234375,
             "argument2": {
               "type": "minecraft:add",
-              "argument1": -0.703125,
+              "argument1": -23.4375,
               "argument2": {
-                "type": "minecraft:cache_2d",
-                "argument": {
-                  "type": "minecraft:end_islands"
+                "type": "minecraft:mul",
+                "argument1": {
+                  "type": "minecraft:y_clamped_gradient",
+                  "from_y": 68,
+                  "to_y": 88,
+                  "from_value": 1,
+                  "to_value": 0
+                },
+                "argument2": {
+                  "type": "minecraft:add",
+                  "argument1": 23.4375,
+                  "argument2": {
+                    "type": "minecraft:add",
+                    "argument1": -0.703125,
+                    "argument2": {
+                      "type": "minecraft:cache_2d",
+                      "argument": {
+                        "type": "minecraft:end_islands"
+                      }
+                    }
+                  }
                 }
               }
             }
           }
         }
+      },
+      "argument2": {
+        "type": "minecraft:mul",
+        "argument1": {
+          "type": "minecraft:y_clamped_gradient",
+          "from_y": 124,
+          "to_y": 152,
+          "from_value": 0,
+          "to_value": 1
+        },
+        "argument2": {
+          "type": "minecraft:mul",
+          "argument1": {
+            "type": "minecraft:y_clamped_gradient",
+            "from_y": 156,
+            "to_y": 176,
+            "from_value": 1,
+            "to_value": 0
+          },
+          "argument2": {
+            "type": "minecraft:cache_2d",
+            "argument": {
+              "type": "minecraft:end_islands"
+            }
+          }
+        }
+      }
+    },
+    "argument2": {
+      "type": "minecraft:mul",
+      "argument1": {
+        "type": "minecraft:y_clamped_gradient",
+        "from_y": 204,
+        "to_y": 232,
+        "from_value": 0,
+        "to_value": 1
+      },
+      "argument2": {
+        "type": "minecraft:mul",
+        "argument1": {
+          "type": "minecraft:y_clamped_gradient",
+          "from_y": 236,
+          "to_y": 256,
+          "from_value": 1,
+          "to_value": 0
+        },
+        "argument2": {
+          "type": "minecraft:cache_2d",
+          "argument": {
+            "type": "minecraft:end_islands"
+          }
+        }
       }
     }
-  }
+  },
+  "argument2": -0.234375
 }

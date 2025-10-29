@@ -10,8 +10,8 @@
     "y_level": {
       "type": "minecraft:uniform",
       "value": {
-        "max_inclusive": 180,
-        "min_inclusive": 110
+        "max_inclusive": 384,
+        "min_inclusive": 320
       }
     }
   }

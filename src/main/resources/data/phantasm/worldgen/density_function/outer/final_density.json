@@ -9,40 +9,112 @@
         "type": "minecraft:blend_density",
         "argument": {
           "type": "minecraft:add",
-          "argument1": -0.08,
-          "argument2": {
-            "type": "minecraft:mul",
+          "argument1": {
+            "type": "minecraft:add",
             "argument1": {
-              "type": "minecraft:y_clamped_gradient",
-              "from_y": 12,
-              "to_y": 52,
-              "from_value": 0.01,
-              "to_value": 0.9875
-            },
-            "argument2": {
               "type": "minecraft:add",
-              "argument1": 0.08,
-              "argument2": {
+              "argument1": {
                 "type": "minecraft:add",
-                "argument1": -8,
+                "argument1": {
+                  "type": "minecraft:mul",
+                  "argument1": {
+                    "type": "minecraft:y_clamped_gradient",
+                    "from_y": 12,
+                    "to_y": 32,
+                    "from_value": 0.01,
+                    "to_value": 0.9875
+                  },
+                  "argument2": {
+                    "type": "minecraft:mul",
+                    "argument1": {
+                      "type": "minecraft:y_clamped_gradient",
+                      "from_y": 38,
+                      "to_y": 56,
+                      "from_value": 1,
+                      "to_value": 0.75
+                    },
+                    "argument2": "minecraft:end/sloped_cheese"
+                  }
+                },
                 "argument2": {
                   "type": "minecraft:mul",
                   "argument1": {
                     "type": "minecraft:y_clamped_gradient",
-                    "from_y": 58,
-                    "to_y": 120,
-                    "from_value": 1,
-                    "to_value": 0.75
+                    "from_y": 52,
+                    "to_y": 72,
+                    "from_value": 0.01,
+                    "to_value": 0.9875
                   },
                   "argument2": {
                     "type": "minecraft:add",
-                    "argument1": 8,
-                    "argument2": "minecraft:end/sloped_cheese"
+                    "argument1": 0.08,
+                    "argument2": {
+                      "type": "minecraft:add",
+                      "argument1": -8,
+                      "argument2": {
+                        "type": "minecraft:mul",
+                        "argument1": {
+                          "type": "minecraft:y_clamped_gradient",
+                          "from_y": 78,
+                          "to_y": 96,
+                          "from_value": 1,
+                          "to_value": 0.75
+                        },
+                        "argument2": {
+                          "type": "minecraft:add",
+                          "argument1": 8,
+                          "argument2": "minecraft:end/sloped_cheese"
+                        }
+                      }
+                    }
                   }
                 }
+              },
+              "argument2": {
+                "type": "minecraft:mul",
+                "argument1": {
+                  "type": "minecraft:y_clamped_gradient",
+                  "from_y": 132,
+                  "to_y": 152,
+                  "from_value": 0.01,
+                  "to_value": 0.9875
+                },
+                "argument2": {
+                  "type": "minecraft:mul",
+                  "argument1": {
+                    "type": "minecraft:y_clamped_gradient",
+                    "from_y": 158,
+                    "to_y": 184,
+                    "from_value": 1,
+                    "to_value": 0.75
+                  },
+                  "argument2": "minecraft:end/sloped_cheese"
+                }
+              }
+            },
+            "argument2": {
+              "type": "minecraft:mul",
+              "argument1": {
+                "type": "minecraft:y_clamped_gradient",
+                "from_y": 212,
+                "to_y": 232,
+                "from_value": 0.01,
+                "to_value": 0.9875
+              },
+              "argument2": {
+                "type": "minecraft:mul",
+                "argument1": {
+                  "type": "minecraft:y_clamped_gradient",
+                  "from_y": 238,
+                  "to_y": 264,
+                  "from_value": 1,
+                  "to_value": 0.75
+                },
+                "argument2": "minecraft:end/sloped_cheese"
               }
             }
-          }
+          },
+          "argument2": -0.08
         }
       }
     }
