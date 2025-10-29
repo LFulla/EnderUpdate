@@ -56,6 +56,10 @@ public class ConfiguredData {
         register(Identifier.of("minecraft", "worldgen/noise_settings/end.json"), () -> true,
                 Common::changeNoiseRouter);
 
+        // Set build height limit in dimension type
+        register(Identifier.of("minecraft", "dimension_type/the_end.json"), () -> true,
+                Common::changeDimensionType);
+
         register(Phantasm.makeID("loot_tables/chests/challenges/elytra.json"),
                 () -> FabricLoader.getInstance().isModLoaded("grindy-elytras"),
                 Common::changeElytraChallengeLoot);
@@ -223,6 +227,15 @@ public class ConfiguredData {
                 }
             }
 
+            // Ensure End visual effects are preserved when using multi-noise biome source
+            if (json.getAsJsonObject().get("generator")
+                    .getAsJsonObject().get("biome_source")
+                    .getAsJsonObject().get("type")
+                    .getAsString().equals("minecraft:multi_noise")) {
+                // Add explicit effects field to maintain End's visual characteristics
+                json.getAsJsonObject().addProperty("effects", "minecraft:the_end");
+            }
+
             return gson.toJson(json);
         }
 
@@ -246,10 +259,9 @@ public class ConfiguredData {
                         .getAsJsonObject().asMap().replace("temperature", temperature);
             }
 
-
             if (EndDataCompat.getCompatibilityMode().equals("custom")) {
                 json.getAsJsonObject().asMap().replace("noise", getJson("""
-                        { "min_y": 0, "height": 256, "size_horizontal": 2, "size_vertical": 1 }"""));
+                    { "min_y": 0, "height": 384, "logical_height": 384, "size_horizontal": 2, "size_vertical": 1 }"""));
 
                 json.getAsJsonObject().get("noise_router")
                         .getAsJsonObject().asMap().replace("depth", new JsonPrimitive("phantasm:is_center"));
@@ -295,6 +307,40 @@ public class ConfiguredData {
         public static String changeElytraParent(JsonElement json) {
             json.getAsJsonObject().asMap().replace("parent", new JsonPrimitive(Phantasm.makeID("beat_challenge").toString()));
             return json.toString();
+        }
+
+        public static String changeDimensionType(JsonElement json) {
+            if (json == null) {
+                // Create default End dimension type with 384 height
+                json = getJson("""
+                        {
+                          "ultrawarm": false,
+                          "natural": false,
+                          "coordinate_scale": 1.0,
+                          "has_skylight": false,
+                          "has_ceiling": false,
+                          "ambient_light": 0.0,
+                          "fixed_time": 6000,
+                          "monster_spawn_light_level": 0,
+                          "monster_spawn_block_light_limit": 0,
+                          "piglin_safe": false,
+                          "bed_works": false,
+                          "respawn_anchor_works": false,
+                          "has_raids": true,
+                          "min_y": 0,
+                          "height": 384,
+                          "logical_height": 384,
+                          "infiniburn": "#minecraft:infiniburn_end",
+                          "effects": "minecraft:the_end"
+                        }""");
+            } else {
+                // Override height in existing dimension type
+                json.getAsJsonObject().asMap().put("min_y", new JsonPrimitive(0));
+                json.getAsJsonObject().asMap().put("height", new JsonPrimitive(384));
+                json.getAsJsonObject().asMap().put("logical_height", new JsonPrimitive(384));
+            }
+            
+            return gson.toJson(json);
         }
     }
 }
