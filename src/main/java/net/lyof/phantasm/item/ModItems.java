@@ -124,4 +124,8 @@ public class ModItems {
     public static final Item END_PHANTOM_SPAWN_EGG = ModRegistry.ofItem("end_phantom_spawn_egg",
             new SpawnEggItem(ModEntities.END_PHANTOM, 0x2D1B69, 0x7B68EE, new FabricItemSettings()))
             .build();
+    public static final Item END_CAVE_SPIDER_SPAWN_EGG = ModRegistry.ofItem("end_cave_spider_spawn_egg",
+            new SpawnEggItem(ModEntities.END_CAVE_SPIDER, 0x2A1845, 0x8B4A8B, new FabricItemSettings()))
+            .build();
+    
 }

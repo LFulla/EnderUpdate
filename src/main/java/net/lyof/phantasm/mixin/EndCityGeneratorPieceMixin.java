@@ -4,7 +4,10 @@ import net.lyof.phantasm.Phantasm;
 import net.lyof.phantasm.block.ModBlocks;
 import net.lyof.phantasm.block.entity.ChallengeRuneBlockEntity;
 import net.lyof.phantasm.config.ConfigEntries;
+import net.lyof.phantasm.entity.ModEntities;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.entity.MobSpawnerBlockEntity;
 import net.minecraft.structure.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockBox;
@@ -48,6 +51,38 @@ public abstract class EndCityGeneratorPieceMixin extends SimpleStructurePiece {
             }
 
             ci.cancel();
+        }
+    }
+
+    @Inject(method = "handleMetadata", at = @At("HEAD"))
+    public void placeEndCaveSpiderSpawners(String metadata, BlockPos pos, ServerWorldAccess world, Random random, BlockBox boundingBox, CallbackInfo ci) {
+        // Place spider spawners in the center of specific End City structures
+        String structurePath = this.getId().getPath();
+        
+        // Check if this is one of the target structures
+        if (structurePath.contains("tower_top") || 
+            structurePath.contains("third_floor_2") || 
+            structurePath.contains("fat_tower_middle") || 
+            structurePath.contains("second_floor_2")) {
+            
+            // Place spawner in the center of the structure when processing the first metadata
+                // Calculate center position of the structure
+            BlockBox box = this.getBoundingBox();
+            BlockPos centerPos = new BlockPos(
+                (box.getMinX() + box.getMaxX()) / 2,
+                box.getMinY() + 1, // One block above the floor
+                (box.getMinZ() + box.getMaxZ()) / 2
+            );
+            
+            // Make sure the position is within bounds and suitable for a spawner
+            if (boundingBox.contains(centerPos)) {
+                // Clear the space for the spawner
+                world.setBlockState(centerPos, Blocks.SPAWNER.getDefaultState(), Block.NOTIFY_ALL);
+                
+                if (world.getBlockEntity(centerPos) instanceof MobSpawnerBlockEntity spawner) {
+                    spawner.setEntityType(ModEntities.END_CAVE_SPIDER, random);
+                }
+            }
         }
     }
 }

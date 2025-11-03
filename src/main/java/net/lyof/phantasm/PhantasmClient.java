@@ -18,6 +18,7 @@ import net.lyof.phantasm.entity.client.renderer.BehemothRenderer;
 import net.lyof.phantasm.entity.client.renderer.ChallengeRuneBlockEntityRenderer;
 import net.lyof.phantasm.entity.client.renderer.ChoralArrowRenderer;
 import net.lyof.phantasm.entity.client.renderer.CrystieRenderer;
+import net.lyof.phantasm.entity.client.renderer.EndCaveSpiderRenderer;
 import net.lyof.phantasm.entity.client.renderer.EndPhantomRenderer;
 import net.lyof.phantasm.entity.custom.BehemothEntity;
 import net.lyof.phantasm.particle.ModParticles;
@@ -51,6 +52,8 @@ public class PhantasmClient implements ClientModInitializer {
         EntityRendererRegistry.register(ModEntities.CHORAL_ARROW, ChoralArrowRenderer::new);
         
         EntityRendererRegistry.register(ModEntities.END_PHANTOM, EndPhantomRenderer::new);
+
+        EntityRendererRegistry.register(ModEntities.END_CAVE_SPIDER, EndCaveSpiderRenderer::new);
         
         BlockEntityRendererFactories.register(ModBlockEntities.CHALLENGE_RUNE, ChallengeRuneBlockEntityRenderer::new);
 

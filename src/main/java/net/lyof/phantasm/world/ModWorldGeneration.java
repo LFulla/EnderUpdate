@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.biome.v1.TheEndBiomes;
 import net.lyof.phantasm.config.ConfigEntries;
 import net.lyof.phantasm.entity.ModEntities;
+import net.lyof.phantasm.entity.custom.EndCaveSpiderEntity;
 import net.lyof.phantasm.setup.ModTags;
 import net.lyof.phantasm.world.biome.ModBiomes;
 import net.lyof.phantasm.world.feature.ModPlacedFeatures;
@@ -61,9 +62,12 @@ public class ModWorldGeneration {
                 SpawnGroup.MONSTER,
                 ModEntities.END_PHANTOM,
                 3, 1, 3);
+
+        // End Cave Spiders will spawn only in End City structures (not in biome)
     }
 
     private static void generateSpawnRestrictions() {
         SpawnRestriction.register(ModEntities.BEHEMOTH, SpawnRestriction.Location.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, MobEntity::canMobSpawn);
+        SpawnRestriction.register(ModEntities.END_CAVE_SPIDER, SpawnRestriction.Location.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, MobEntity::canMobSpawn);
     }
 }

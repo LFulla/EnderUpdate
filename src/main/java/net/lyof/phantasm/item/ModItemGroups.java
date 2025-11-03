@@ -311,7 +311,7 @@ public class ModItemGroups {
             entries.add(ModItems.CRYSTIE_SPAWN_EGG);
             entries.add(ModItems.BEHEMOTH_SPAWN_EGG);
             entries.add(ModItems.END_PHANTOM_SPAWN_EGG);
-            entries.add(ModItems.END_PHANTOM_SPAWN_EGG);
+            entries.add(ModItems.END_CAVE_SPIDER_SPAWN_EGG);
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
             entries.addAfter(Items.ENDER_EYE, ModItems.ELYTRA_CORE);
