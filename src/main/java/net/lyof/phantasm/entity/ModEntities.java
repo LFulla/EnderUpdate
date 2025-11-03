@@ -6,6 +6,7 @@ import net.lyof.phantasm.Phantasm;
 import net.lyof.phantasm.entity.custom.BehemothEntity;
 import net.lyof.phantasm.entity.custom.ChoralArrowEntity;
 import net.lyof.phantasm.entity.custom.CrystieEntity;
+import net.lyof.phantasm.entity.custom.EndCaveSpiderEntity;
 import net.lyof.phantasm.entity.custom.EndPhantomEntity;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
@@ -18,6 +19,7 @@ public class ModEntities {
         FabricDefaultAttributeRegistry.register(CRYSTIE, CrystieEntity.createAttributes());
         FabricDefaultAttributeRegistry.register(BEHEMOTH, BehemothEntity.createAttributes());
         FabricDefaultAttributeRegistry.register(END_PHANTOM, EndPhantomEntity.createEndPhantomAttributes());
+        FabricDefaultAttributeRegistry.register(END_CAVE_SPIDER, EndCaveSpiderEntity.createEndCaveSpiderAttributes());
     }
 
     public static final EntityType<CrystieEntity> CRYSTIE = Registry.register(Registries.ENTITY_TYPE,
@@ -36,4 +38,8 @@ public class ModEntities {
             Phantasm.makeID("end_phantom"), FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, EndPhantomEntity::new)
                     .dimensions(EntityDimensions.changing(1.8f, 1f)).trackRangeBlocks(80).build()
     );
-                }
+
+    public static final EntityType<EndCaveSpiderEntity> END_CAVE_SPIDER = Registry.register(Registries.ENTITY_TYPE,
+            Phantasm.makeID("end_cave_spider"), FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, EndCaveSpiderEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.7f, 0.5f)).build());
+}
