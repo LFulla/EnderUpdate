@@ -20,10 +20,12 @@ import net.minecraft.recipe.CookingRecipeSerializer;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.Registries;
+import net.minecraft.registry.tag.TagKey;
+
+import java.util.List;
 import net.minecraft.registry.tag.ItemTags;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 
@@ -341,6 +343,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 ModBlocks.CIRITE_IRON_ORE, Items.IRON_INGOT, 5);
         offerFoodCookingRecipe(exporter, "blast_furnace", CookingRecipeSerializer.BLASTING, 100,
                 ModBlocks.CIRITE_IRON_ORE, Items.IRON_INGOT, 5);
+
+        // Meteorite Smelting
+        offerSmelting(exporter, List.of(ModBlocks.METEORITE), RecipeCategory.MISC, ModItems.METEORITE_INGOT, 
+                0.7f, 200, "meteorite_ingot");
+        offerBlasting(exporter, List.of(ModBlocks.METEORITE), RecipeCategory.MISC, ModItems.METEORITE_INGOT, 
+                0.7f, 100, "meteorite_ingot");
 
         // Dralgae to Acidic Mass or Obsidian
         offer2x2CompactingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ACIDIC_MASS, ModBlocks.DRALGAE);

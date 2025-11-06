@@ -8,6 +8,7 @@ import net.lyof.phantasm.entity.custom.ChoralArrowEntity;
 import net.lyof.phantasm.entity.custom.CrystieEntity;
 import net.lyof.phantasm.entity.custom.EndCaveSpiderEntity;
 import net.lyof.phantasm.entity.custom.EndPhantomEntity;
+import net.lyof.phantasm.entity.custom.MeteoriteEntity;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
@@ -42,4 +43,8 @@ public class ModEntities {
     public static final EntityType<EndCaveSpiderEntity> END_CAVE_SPIDER = Registry.register(Registries.ENTITY_TYPE,
             Phantasm.makeID("end_cave_spider"), FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, EndCaveSpiderEntity::new)
                     .dimensions(EntityDimensions.fixed(0.7f, 0.5f)).build());
+
+    public static final EntityType<MeteoriteEntity> METEORITE = Registry.register(Registries.ENTITY_TYPE,
+            Phantasm.makeID("meteorite"), FabricEntityTypeBuilder.create(SpawnGroup.MISC, MeteoriteEntity::new)
+                    .dimensions(EntityDimensions.fixed(3.0f, 3.0f)).trackRangeChunks(8).trackedUpdateRate(1).build());
 }
