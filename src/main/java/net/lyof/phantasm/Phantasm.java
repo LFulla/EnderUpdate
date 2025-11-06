@@ -25,6 +25,7 @@ import net.lyof.phantasm.world.biome.EndDataCompat;
 import net.lyof.phantasm.world.feature.ModFeatures;
 import net.lyof.phantasm.world.feature.custom.tree.ModTreePlacerTypes;
 import net.lyof.phantasm.world.noise.ModDensityFunctions;
+import net.lyof.phantasm.world.spawning.MeteoriteSpawning;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
@@ -63,6 +64,9 @@ public class Phantasm implements ModInitializer {
 		ModFeatures.register();
 		ModDensityFunctions.register();
 		ModWorldGeneration.register();
+
+		// Initialize meteorite spawning
+		MeteoriteSpawning.initialize();
 
 		registerPackets();
 

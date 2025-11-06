@@ -21,6 +21,7 @@ public class ModItemGroups {
                         if (false) return;
 
                         entries.add(ModBlocks.FALLEN_STAR);
+                        entries.add(ModBlocks.METEORITE);
 
                         entries.add(ModBlocks.VIVID_NIHILIUM);
                         entries.add(ModBlocks.VIVID_NIHILIS);
@@ -314,6 +315,7 @@ public class ModItemGroups {
             entries.add(ModItems.END_CAVE_SPIDER_SPAWN_EGG);
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
+            entries.addAfter(Items.NETHERITE_INGOT, ModItems.METEORITE_INGOT);
             entries.addAfter(Items.ENDER_EYE, ModItems.ELYTRA_CORE);
             entries.addAfter(ModItems.ELYTRA_CORE, ModItems.ENDER_HEART);
         });

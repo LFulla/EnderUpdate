@@ -154,6 +154,9 @@ public class ModBlocks {
     public static final Block VOID_CRYSTAL_SHARD = ModRegistry.ofBlock("void_crystal_shard",
             new CrystalShardBlock(copy(crystalMaterial).sounds(BlockSoundGroup.GLASS)))
             .model(Models.GENERATED).tool("_pickaxe").drop().cutout().build();
+    public static final Block METEORITE = ModRegistry.ofBlock("meteorite",
+            new Block(copy(Blocks.DIAMOND_BLOCK).mapColor(MapColor.DEEPSLATE_GRAY)))
+            .tag(BlockTags.DRAGON_IMMUNE).tool("stone_pickaxe").drop().model().build();
 
 
     // Crystal Blockset
