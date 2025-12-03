@@ -82,6 +82,9 @@ public class ModConfiguredFeatures {
         register(context, SHATTERED_TOWER, ShatteredTowerStructure.INSTANCE,
                 new CountConfig(UniformIntProvider.create(50, 70)));
 
+        register(context, BASALT_GAZEBO, BasaltGazeboStructure.INSTANCE,
+                new CountConfig(ConstantIntProvider.create(0)));
+
         register(context, RAW_PURPUR_COAL_ORE, Feature.ORE, new OreFeatureConfig(
                 new BlockMatchRuleTest(ModBlocks.RAW_PURPUR), ModBlocks.RAW_PURPUR_COAL_ORE.getDefaultState(), 24));
 
@@ -141,6 +144,7 @@ public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> STARFLOWER = create("patch_starflower");
 
     public static final RegistryKey<ConfiguredFeature<?, ?>> SHATTERED_TOWER = create("shattered_tower");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> BASALT_GAZEBO = create("basalt_gazebo");
 
     public static final RegistryKey<ConfiguredFeature<?, ?>> RAW_PURPUR_COAL_ORE = create("raw_purpur_coal_ore");
     public static final RegistryKey<ConfiguredFeature<?, ?>> OBLIVINE = create("patch_oblivine");

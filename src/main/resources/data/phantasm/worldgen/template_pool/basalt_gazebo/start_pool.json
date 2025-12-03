@@ -1,0 +1,14 @@
+{
+  "name": "phantasm:basalt_gazebo/start_pool",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "element": {
+        "element_type": "minecraft:feature_pool_element",
+        "feature": "phantasm:basalt_gazebo",
+        "projection": "rigid"
+      },
+      "weight": 1
+    }
+  ]
+}
