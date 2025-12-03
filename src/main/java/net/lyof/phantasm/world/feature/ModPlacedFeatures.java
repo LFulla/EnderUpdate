@@ -72,6 +72,9 @@ public class ModPlacedFeatures {
         register(context, SHATTERED_TOWER, configLookup.getOrThrow(ModConfiguredFeatures.SHATTERED_TOWER),
                 PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP);
 
+        register(context, BASALT_GAZEBO, configLookup.getOrThrow(ModConfiguredFeatures.BASALT_GAZEBO),
+                PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP);
+
         register(context, RAW_PURPUR_COAL_ORE, configLookup.getOrThrow(ModConfiguredFeatures.RAW_PURPUR_COAL_ORE),
                 CountPlacementModifier.of(32),
                 SquarePlacementModifier.of(),
@@ -152,6 +155,7 @@ public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> STARFLOWER_PATCH = create("patch_starflower");
 
     public static final RegistryKey<PlacedFeature> SHATTERED_TOWER = create("shattered_tower");
+    public static final RegistryKey<PlacedFeature> BASALT_GAZEBO = create("basalt_gazebo");
 
     public static final RegistryKey<PlacedFeature> RAW_PURPUR_COAL_ORE = create("raw_purpur_coal_ore");
     public static final RegistryKey<PlacedFeature> OBLIVINE_PATCH = create("patch_oblivine");

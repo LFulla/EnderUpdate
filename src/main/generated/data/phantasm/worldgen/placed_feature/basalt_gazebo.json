@@ -1,0 +1,9 @@
+{
+  "feature": "phantasm:basalt_gazebo",
+  "placement": [
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "MOTION_BLOCKING"
+    }
+  ]
+}
